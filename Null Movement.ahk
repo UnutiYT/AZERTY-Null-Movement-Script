@@ -12,7 +12,7 @@
 ; 2024-07-25: Added requires v2 line
 
 ; Scan Code Mappings:
-; W   SC011
+; Z   SC02C
 ; A   SC01E
 ; S   SC01F
 ; D   SC020
@@ -134,7 +134,7 @@ End:: ; <--- this button exits the script
     }
 }
 
-*$SC011:: ; *$w::
+*$SC02C:: ; *$w::
 {    
     global w_held
     global s_held
@@ -150,10 +150,10 @@ End:: ; <--- this button exits the script
     }
 
     w_scrip := 1
-    SendInput "{Blind}{SC011 down}"
+    SendInput "{Blind}{SC02C down}"
 }
 
-*$SC011 up:: ; *$w up::
+*$SC02C up:: ; *$w up::
 {    
     global w_held
     global s_held
@@ -165,7 +165,7 @@ End:: ; <--- this button exits the script
     if w_scrip
     {
         w_scrip := 0
-        SendInput "{Blind}{SC011 up}"
+        SendInput "{Blind}{SC02C up}"
     }
 
     if s_held && !s_scrip 
@@ -187,7 +187,7 @@ End:: ; <--- this button exits the script
     if w_scrip 
     {
         w_scrip := 0
-        SendInput "{Blind}{SC011 up}"
+        SendInput "{Blind}{SC02C up}"
     }
 
     s_scrip := 1
@@ -212,6 +212,6 @@ End:: ; <--- this button exits the script
     if w_held && !w_scrip 
     {
         w_scrip := 1
-        SendInput "{Blind}{SC011 down}"
+        SendInput "{Blind}{SC02C down}"
     }
 }
